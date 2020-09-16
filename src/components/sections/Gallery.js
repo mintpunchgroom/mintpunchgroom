@@ -44,6 +44,10 @@ const LinkStyle = styled.div`
   }
 `;
 
+const HeadingStyle = styled.div`
+  margin-bottom: 2rem;
+`;
+
 const Gallery = () => {
   const width = useWindowSize().width;
   const [imagesArray, setImagesArray] = React.useState(images);
@@ -64,7 +68,9 @@ const Gallery = () => {
 
   return (
     <>
-      <Heading>{text.sections.galery.heading}</Heading>
+      <HeadingStyle>
+        <Heading>{text.sections.galery.heading}</Heading>
+      </HeadingStyle>
       <Contatiner>
         {imagesArray.map((src, i) => (
           <Img key={i} src={src} />
