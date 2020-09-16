@@ -36,41 +36,32 @@ const TextStyle = styled.div`
 const AboutUs = ({ data = text.sections.about.cards }) => {
   const width = useWindowSize().width;
 
+  const CardContent = ({ item }) => (
+    <CardContainer>
+      <Card>
+        <Heading secondary align="center">
+          {item.title}
+        </Heading>
+        <TextStyle>
+          <Text align="center">{item.description}</Text>
+        </TextStyle>
+      </Card>
+    </CardContainer>
+  );
+
   return (
     <Section heading={text.sections.about.heading}>
       {width > 900 ? (
         <Cards>
           {data.map((item, index) => (
-            <CardContainer key={index}>
-              <Card>
-                <Text>
-                  <Heading secondary align="center">
-                    {item.title}
-                  </Heading>
-                </Text>
-                <TextStyle>
-                  <Text align="center">{item.description}</Text>
-                </TextStyle>
-              </Card>
-            </CardContainer>
+            <CardContent key={index} item={item} />
           ))}
         </Cards>
       ) : (
         <AwesomeSlider>
           {data.map((item, index) => (
-            <div>
-              <CardContainer key={index}>
-                <Card>
-                  <Text>
-                    <Heading secondary align="center">
-                      {item.title}
-                    </Heading>
-                  </Text>
-                  <TextStyle>
-                    <Text align="center">{item.description}</Text>
-                  </TextStyle>
-                </Card>
-              </CardContainer>
+            <div key={index}>
+              <CardContent item={item} />
             </div>
           ))}
         </AwesomeSlider>

@@ -6,16 +6,13 @@ import { ReactComponent as LogoSVG } from "../assets/logo.svg";
 
 const Style = styled.div`
   display: inline-block;
-  font-size: 24px;
   font-weight: 300;
 
-  @media (max-width: 720px) {
-    font-size: 20px;
+  font-size: 18px;
 
-    svg {
-      width: 50px;
-      height: 50px;
-    }
+  svg {
+    width: 40px;
+    height: 40px;
   }
 
   a {

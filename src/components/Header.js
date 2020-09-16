@@ -2,14 +2,34 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import useWindowSize from "../../utility/useWindowSize";
-import Logo from "../Logo";
-import Text from "../Text";
-import Base from "./Base";
+import useWindowSize from "../utility/useWindowSize";
+import Logo from "./Logo";
+import Text from "./Text";
 
-import text from "../../text";
+import text from "../text";
 
-const Container = styled(Base)`
+const Container = styled.header`
+  height: 60px;
+  padding: 0 20px;
+  background: ${(props) => props.theme.bgAlt};
+  color: ${(props) => props.theme.text};
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: currentColor;
+    }
+  }
   position: fixed;
   top: 0;
   left: 0;
@@ -48,9 +68,7 @@ const MobileMenuAction = styled.div`
   justify-content: space-between;
   margin-bottom: 2rem;
 
-  @media (max-width: 720px) {
-    height: 60px;
-  }
+  height: 60px;
 `;
 
 const MobileMenuItem = styled.div`
@@ -82,9 +100,9 @@ const Header = () => {
           <Link to="/">{text.header.nav.home}</Link>
           <Link to="/galery">{text.header.nav.galery}</Link>
           <Link to="/contacts">{text.header.nav.contact}</Link>
-          <h3>
+          <h4>
             <i class="fas fa-phone"></i> {text.phone}{" "}
-          </h3>
+          </h4>
         </Navigation>
       ) : (
         <div>

@@ -8,26 +8,6 @@ const Container = styled.blockquote`
   margin: 0;
   padding: 0 30px;
 
-  /* I dont like quotes */
-
-  /* &:before {
-    content: "“";
-    left: 0;
-    top: -40px;
-  }
-  &:after {
-    content: "”";
-    right: 0;
-    top: 70px;
-  } */
-
-  &:before,
-  &:after {
-    position: absolute;
-    font-size: 90px;
-    line-height: 1;
-  }
-
   @media (max-width: 720px) {
     font-size: 28px;
   }

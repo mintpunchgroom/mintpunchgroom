@@ -15,13 +15,8 @@ const Cards = styled.div`
 `;
 
 const CardStyle = styled.div`
-  padding-top: ${(props) => (props.main ? 0 : "20px")};
-  margin: ${(props) => props.theme.space.xl} ${(props) => props.theme.space.lg};
+  margin: 0 ${(props) => props.theme.space.lg};
   max-width: 320px;
-
-  @media (max-width: 720px) {
-    padding-top: 0;
-  }
 `;
 
 const AwesomeSliderStyles = styled.div`

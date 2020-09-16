@@ -13,7 +13,7 @@ const font = {
     regular: "16px",
     medium: "24px",
     large: "28px",
-    xlarge: "38px",
+    xlarge: "32px",
   },
 };
 
@@ -33,11 +33,11 @@ export const defaultTheme = {
   huge: `font-size: ${font.size.xlarge};`,
 
   /* COLORS */
-  primary: "#52CDC1",
+  primary: "#3ae4b1",
   secondary: "#feb5a5",
 
   bg: "white",
-  bgAlt: "#fde8e4",
+  bgAlt: "#d8ffe1",
 
   text: "#2e2e2e",
   textWhite: "white",

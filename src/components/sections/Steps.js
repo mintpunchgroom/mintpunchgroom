@@ -43,7 +43,7 @@ const Image = styled.img`
 
 const Steps = ({ data = text.sections.steps.steps }) => {
   return (
-    <Section bigSpace heading={text.sections.steps.heading}>
+    <Section heading={text.sections.steps.heading}>
       <ParentContainer>
         <Container>
           <StepsContainer>

@@ -1,8 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import Base from "./Base";
 
-const Style = styled(Base)`
+const Style = styled.footer`
+  height: 100px;
+  padding: 0 20px;
+  background: ${(props) => props.theme.bgAlt};
+  color: ${(props) => props.theme.text};
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 720px) {
+    height: 60px;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: currentColor;
+    }
+  }
   bottom: 0;
   left: 0;
   right: 0;
@@ -40,7 +64,7 @@ const Footer = () => {
     <Style>
       <p>
         <span>
-          Photo by <br />
+          Photo by
           <a href="https://unsplash.com/@purplelydia?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
             Lydia Tan
           </a>{" "}
@@ -48,12 +72,15 @@ const Footer = () => {
           <a href="https://unsplash.com/@jamie452?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
             Jamie Street
           </a>{" "}
-          <br />
           on{" "}
           <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
             Unsplash
           </a>
         </span>
+        <div>
+          Background made by{" "}
+          <a href="https://SVGBackgrounds.com">SVGBackgrounds.com</a>
+        </div>
       </p>
       <Icons>
         <a href="https://www.google.com/">

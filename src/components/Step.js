@@ -24,7 +24,8 @@ const IndexCircle = styled.div`
 
   ${(props) => props.theme.huge}
 
-  background-color: ${(props) => props.theme.secondary};
+  /* background-color: ${(props) => props.theme.secondary}; */
+  background-color: ${(props) => props.theme.primary};
 `;
 
 const Label = styled.div`

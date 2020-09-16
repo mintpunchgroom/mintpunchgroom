@@ -22,7 +22,7 @@ const CardStyle = styled.div`
 
     z-index: 1;
 
-    background: ${(props) => props.theme.secondary};
+    background: ${(props) => props.theme.primary};
 
     width: 300px;
     height: 300px;

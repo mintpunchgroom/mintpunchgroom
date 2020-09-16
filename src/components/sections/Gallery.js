@@ -10,6 +10,7 @@ import images from "../../images";
 import text from "../../text";
 
 const Contatiner = styled.div`
+  margin-top: -0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +18,7 @@ const Contatiner = styled.div`
 `;
 
 const Img = styled.img`
-  border: 1px solid white;
+  padding: 0.25rem;
   width: 300px;
   height: 300px;
 
@@ -29,10 +30,6 @@ const Img = styled.img`
     width: 300px;
     height: 300px;
   }
-`;
-
-const Space = styled.div`
-  margin: 2rem 0;
 `;
 
 const LinkStyle = styled.div`
@@ -67,9 +64,7 @@ const Gallery = () => {
 
   return (
     <>
-      <Space>
-        <Heading>{text.sections.galery.heading}</Heading>
-      </Space>
+      <Heading>{text.sections.galery.heading}</Heading>
       <Contatiner>
         {imagesArray.map((src, i) => (
           <Img key={i} src={src} />

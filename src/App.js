@@ -9,8 +9,8 @@ import "react-awesome-slider/dist/styles.css";
 
 /* Layout Components */
 import Page from "./components/Page";
-import Header from "./components/header_footer/Header";
-import Footer from "./components/header_footer/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 /* Pages */
 import HomePage from "./pages/HomePage";

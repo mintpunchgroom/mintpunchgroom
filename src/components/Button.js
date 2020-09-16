@@ -16,12 +16,12 @@ const Style = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: #3bc4b9;
+    background: #34cc9f;
   }
 
   &:active {
     transition: background-color ease-in 150ms;
-    background: #24b5ab;
+    background: #33b58f;
   }
 `;
 
