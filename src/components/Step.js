@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Heading from "./Heading";
+import Icon from "./Icon";
 
 const Container = styled.div`
   display: flex;
@@ -10,32 +11,34 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const IndexCircle = styled.div`
+const Circle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 
-  flex-shrink:0;
+  flex-shrink: 0;
 
   width: 90px;
   height: 90px;
 
   border-radius: 200px;
 
-  ${(props) => props.theme.huge}
+  font-size: 50px;
 
-  /* background-color: ${(props) => props.theme.secondary}; */
   background-color: ${(props) => props.theme.primary};
 `;
 
 const Label = styled.div`
   margin: 0 ${(props) => props.theme.space.md};
+  font-size: 18px;
 `;
 
-const Step = ({ index = 0, title, children }) => {
+const Step = ({ img, title, children }) => {
   return (
     <Container>
-      <IndexCircle>{index}</IndexCircle>
+      <Circle>
+        <Icon src={img} />
+      </Circle>
       <Label>
         <Heading secondary>{title}</Heading>
         <div>{children}</div>

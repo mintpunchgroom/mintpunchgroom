@@ -5,9 +5,12 @@ import Section from "../Section";
 import Blockquote from "../Blockquote";
 import Button from "../Button";
 import RatioContainer from "../RatioContainer";
+import Icon from "../Icon";
 
 import img from "../../assets/gerda.jpg";
 import text from "../../text";
+
+import corgi from "../../assets/icons/corgi.svg";
 
 const ImageWrap = styled.div`
   position: relative;
@@ -66,7 +69,13 @@ const Main = () => {
     <Section alt main bigSpace>
       <Parent>
         <Container text>
-          <Blockquote>{text.sections.main.marketing}</Blockquote>
+          <Blockquote>
+            <div>{text.sections.main.heading}</div>
+            <div>
+              {text.sections.main.subheading}{" "}
+              <Icon src={corgi} alt="Corgi icon" />
+            </div>
+          </Blockquote>
           <Space>
             <Button>{text.button}</Button>
           </Space>

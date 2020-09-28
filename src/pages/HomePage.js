@@ -1,6 +1,6 @@
 import React from "react";
 import AboutUs from "../components/sections/AboutUs";
-import Prices from "../components/sections/Prices";
+// import Prices from "../components/sections/Prices";
 import Main from "../components/sections/Main";
 import Gallery from "../components/sections/Gallery";
 // import Reviews from "../components/sections/Reviews";
@@ -13,7 +13,7 @@ const HomePage = () => {
       <AboutUs />
       <Gallery />
       {/* <Reviews /> */}
-      <Prices />
+      {/* <Prices /> */}
       <Steps />
     </>
   );

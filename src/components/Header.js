@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import useWindowSize from "../utility/useWindowSize";
 import Logo from "./Logo";
 import Text from "./Text";
+import Icon from "./Icon";
+
+import phone from "../assets/icons/telephone.svg";
+import menu from "../assets/icons/menu.svg";
+import cancel from "../assets/icons/cancel.svg";
 
 import text from "../text";
 
@@ -48,6 +53,20 @@ const Navigation = styled.div`
   }
 `;
 
+const NavItem = styled(NavLink)`
+  display: inline-flex;
+  align-items: center;
+
+  height: 60px;
+
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+
+  &.selected {
+    border-bottom: 3px solid ${(props) => props.theme.primary};
+  }
+`;
+
 const MobileMenu = styled.div`
   position: fixed;
   z-index: 300;
@@ -76,14 +95,6 @@ const MobileMenuItem = styled.div`
   text-align: center;
 `;
 
-const Icon = styled.div`
-  i {
-    width: 1.5rem;
-    height: 1.5rem;
-    font-size: 1.5rem;
-  }
-`;
-
 const Header = () => {
   const width = useWindowSize().width;
   const [isMobileMenuOpen, setMobileMenuOpen] = React.useState(false);
@@ -97,11 +108,20 @@ const Header = () => {
       <Logo />
       {width > 720 ? (
         <Navigation>
-          <Link to="/">{text.header.nav.home}</Link>
-          <Link to="/galery">{text.header.nav.galery}</Link>
-          <Link to="/contacts">{text.header.nav.contact}</Link>
+          <NavItem exact activeClassName="selected" to="/">
+            {text.header.nav.home}
+          </NavItem>
+          <NavItem activeClassName="selected" to="/galery">
+            {text.header.nav.galery}
+          </NavItem>
+          <NavItem activeClassName="selected" to="/price">
+            {text.header.nav.price}
+          </NavItem>
+          <NavItem activeClassName="selected" to="/contacts">
+            {text.header.nav.contact}
+          </NavItem>
           <h4>
-            <i class="fas fa-phone"></i> {text.phone}{" "}
+            <Icon src={phone} alt="Corgi icon" /> {text.phone}{" "}
           </h4>
         </Navigation>
       ) : (
@@ -110,29 +130,28 @@ const Header = () => {
             <MobileMenu>
               <MobileMenuAction>
                 <Logo onClick={() => setMobileMenuOpen(false)} />
-                <Icon onClick={() => setMobileMenuOpen(false)}>
-                  <i class="fas fa-times"></i>
-                </Icon>
+                <Icon onClick={() => setMobileMenuOpen(false)} src={cancel} />
               </MobileMenuAction>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+              <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>
                 <MobileMenuItem>{text.header.nav.home}</MobileMenuItem>
-              </Link>
-              <Link to="/galery" onClick={() => setMobileMenuOpen(false)}>
+              </NavLink>
+              <NavLink to="/galery" onClick={() => setMobileMenuOpen(false)}>
                 <MobileMenuItem>{text.header.nav.galery}</MobileMenuItem>
-              </Link>
-              <Link to="/contacts" onClick={() => setMobileMenuOpen(false)}>
+              </NavLink>
+              <NavLink to="/price" onClick={() => setMobileMenuOpen(false)}>
+                <MobileMenuItem>{text.header.nav.price}</MobileMenuItem>
+              </NavLink>
+              <NavLink to="/contacts" onClick={() => setMobileMenuOpen(false)}>
                 <MobileMenuItem>{text.header.nav.contact}</MobileMenuItem>
-              </Link>
+              </NavLink>
               <h3>
                 <Text align="center">
-                  <i class="fas fa-phone"></i> {text.phone}{" "}
+                  <Icon src={phone} alt="Corgi icon" /> {text.phone}{" "}
                 </Text>
               </h3>
             </MobileMenu>
           ) : (
-            <Icon onClick={() => setMobileMenuOpen(true)}>
-              <i class="fas fa-bars"></i>
-            </Icon>
+            <Icon onClick={() => setMobileMenuOpen(true)} src={menu} />
           )}
         </div>
       )}

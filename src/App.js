@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 /* Pages */
 import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/GalleryPage";
+import PricePage from "./pages/PricePage";
 import ContactPage from "./pages/ContactPage";
 
 function ScrollToTop() {
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/galery">
             <GalleryPage />
+          </Route>
+          <Route path="/price">
+            <PricePage />
           </Route>
           <Route path="/contacts">
             <ContactPage />

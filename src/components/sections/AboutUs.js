@@ -5,7 +5,6 @@ import AwesomeSlider from "react-awesome-slider";
 import Section from "../Section";
 import Card from "../Card";
 import Heading from "../Heading";
-import Text from "../Text";
 import useWindowSize from "../../utility/useWindowSize";
 
 import text from "../../text";
@@ -26,11 +25,18 @@ const CardContainer = styled.div`
   min-width: 250px;
 `;
 
-const TextStyle = styled.div`
+const HeadingStyle = styled.div`
+  margin: 1rem 0;
+`;
+
+const TextStyle = styled.p`
   min-height: 150px;
 
   display: flex;
   align-items: center;
+
+  text-align: center;
+  font-size: 18px;
 `;
 
 const AboutUs = ({ data = text.sections.about.cards }) => {
@@ -39,12 +45,12 @@ const AboutUs = ({ data = text.sections.about.cards }) => {
   const CardContent = ({ item }) => (
     <CardContainer>
       <Card>
-        <Heading secondary align="center">
-          {item.title}
-        </Heading>
-        <TextStyle>
-          <Text align="center">{item.description}</Text>
-        </TextStyle>
+        <HeadingStyle>
+          <Heading secondary align="center">
+            {item.title}
+          </Heading>
+        </HeadingStyle>
+        <TextStyle>{item.description}</TextStyle>
       </Card>
     </CardContainer>
   );

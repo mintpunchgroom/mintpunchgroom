@@ -11,13 +11,9 @@ const Style = styled.footer`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 720px) {
-    height: 60px;
-  }
-
   a {
     color: currentColor;
-    text-decoration: none;
+    /* text-decoration: none; */
 
     &:hover {
       text-decoration: underline;
@@ -34,17 +30,26 @@ const Style = styled.footer`
   color: ${(props) => props.theme.textAlt};
 
   @media (max-width: 720px) {
-    height: auto !important;
+    height: auto;
     flex-direction: column;
 
     text-align: center;
   }
 `;
 
-const Icons = styled.div`
+const FooterSection = styled.p`
+  width: 33%;
+  text-align: center;
+
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+`;
+
+const Icons = styled(FooterSection)`
   display: flex;
 
-  justify-content: space-between;
+  justify-content: center;
 
   > * + * {
     margin-left: 0.5rem;
@@ -59,12 +64,16 @@ const Icon = styled.div`
   }
 `;
 
+const Credits = styled(FooterSection)`
+  font-size: 12px;
+`;
+
 const Footer = () => {
   return (
     <Style>
-      <p>
+      <Credits>
         <span>
-          Photo by
+          Photo by{" "}
           <a href="https://unsplash.com/@purplelydia?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
             Lydia Tan
           </a>{" "}
@@ -81,25 +90,42 @@ const Footer = () => {
           Background made by{" "}
           <a href="https://SVGBackgrounds.com">SVGBackgrounds.com</a>
         </div>
-      </p>
+        <div>
+          Icons made by{" "}
+          <a href="http://www.freepik.com/" title="Freepik">
+            Freepik
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://www.flaticon.com/authors/smalllikeart"
+            title="smalllikeart"
+          >
+            smalllikeart
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </div>
+      </Credits>
       <Icons>
-        <a href="https://www.google.com/">
+        {/* <a href="https://www.google.com/">
           <Icon>
             <i class="fab fa-twitter-square"></i>
           </Icon>
-        </a>
-        <a href="https://www.instagram.com/">
+        </a> */}
+        <a href="https://www.instagram.com/mint.punchgroom/">
           <Icon>
             <i class="fab fa-instagram-square"></i>
           </Icon>
         </a>
-        <a href="https://www.google.com/">
+        {/* <a href="https://www.google.com/">
           <Icon>
             <i class="fab fa-facebook-square"></i>
           </Icon>
-        </a>
+        </a> */}
       </Icons>
-      <p>Made by Dudak Studio. 2020</p>
+      <FooterSection>Made by Dudak Studio. 2020</FooterSection>
     </Style>
   );
 };

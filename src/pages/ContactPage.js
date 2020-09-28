@@ -56,13 +56,14 @@ const ContactPage = () => {
           <Text>
             <Heading secondary>{text.contacts.title}</Heading>
           </Text>
+          <Text>{text.contacts.text}</Text>
           <Text>
             {text.contacts.phone} {text.phone}
           </Text>
           <Text>{text.contacts.adress}</Text>
           <Text>
             <i class="fab fa-instagram"></i>
-            <span>&nbsp;{text.contacts.insta}</span>
+            <a href={text.contacts.instaLink}>&nbsp;{text.contacts.insta}</a>
           </Text>
         </Container>
       </ParentContainer>

@@ -43,12 +43,12 @@ const Image = styled.img`
 
 const Steps = ({ data = text.sections.steps.steps }) => {
   return (
-    <Section heading={text.sections.steps.heading}>
+    <Section heading={text.sections.steps.heading} alt>
       <ParentContainer>
         <Container>
           <StepsContainer>
             {data.map((item, index) => (
-              <Step key={index} index={index + 1} title={item.title}>
+              <Step key={index} img={item.img} title={item.title}>
                 {item.description}
               </Step>
             ))}

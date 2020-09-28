@@ -22,6 +22,15 @@ const Normalize = createGlobalStyle`
   .awssld__content {
     background-color: transparent;
   }
+
+  a {
+    color: ${(props) => props.theme.text};
+    transition: color ease-in 200ms;
+
+    &:visited {
+      color: ${(props) => props.theme.text};
+    }
+  }
 `;
 
 export default Normalize;
