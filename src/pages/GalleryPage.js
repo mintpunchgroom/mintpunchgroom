@@ -32,7 +32,7 @@ const GalleryPage = () => {
         {images.map((src, i) => (
           <Image key={i}>
             <RatioContainer ratioX={1} ratioY={1}>
-              <img src={src} alt="" />
+              <img src={src} alt={`Dog ${i + 1}`} />
             </RatioContainer>
           </Image>
         ))}

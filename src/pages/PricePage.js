@@ -6,17 +6,8 @@ import Heading from "../components/Heading";
 
 import text from "../text";
 
-const Container = styled.div`
-  display: flex;
-
-  justify-content: space-between;
-
-  flex-wrap: wrap;
-  margin-top: calc(-1 * ${(props) => props.theme.space.lg});
-`;
-
 const HeadingStyle = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: ${(props) => props.theme.space.lg};
 `;
 
 const PriceSection = styled.div`
@@ -27,27 +18,21 @@ const PriceSection = styled.div`
   border-radius: 10px;
   padding: ${(props) => props.theme.space.lg};
   background: ${(props) => props.theme.bgAlt};
-  margin: ${(props) => props.theme.space.lg};
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 
-  width: calc(50% - 2 * ${(props) => props.theme.space.lg});
+  margin-top: ${(props) => props.theme.space.xl};
+  width: 100%;
 
-  @media (max-width: 860px) {
-    width: 100%;
-    margin: ${(props) => props.theme.space.md} 0;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
+  page-break-inside: avoid;
+  break-inside: avoid;
 `;
 
 const ListItem = styled.div`
   display: flex;
   justify-content: space-between;
 
-  margin-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  margin-top: ${(props) => props.theme.space.sm};
+  padding-bottom: ${(props) => props.theme.space.sm};
 
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
@@ -56,17 +41,30 @@ const ListItem = styled.div`
   }
 
   > span + span {
-    margin-left: 1rem;
+    margin-left: ${(props) => props.theme.space.md};
   }
 `;
 
 const Warning = styled.div`
-  padding-top: 1rem;
+  padding-top: ${(props) => props.theme.space.md};
 
   color: ${(props) => props.theme.textAlt};
   font-size: 12px;
 
   border-top: 1px solid rgba(0, 0, 0, 0.2);
+`;
+
+const Container = styled.div`
+  margin-top: calc(-1 * ${(props) => props.theme.space.xl});
+
+  columns: 2;
+  column-gap: ${(props) => props.theme.space.xl};
+  height: 1200px; //largest card height hardcoded
+
+  @media (max-width: 860px) {
+    columns: 1;
+    height: auto;
+  }
 `;
 
 const PricePage = () => {
